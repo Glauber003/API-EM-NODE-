@@ -54,8 +54,8 @@ class Produtocontroller{
                 id:id
             }
            })
-        
-        return res.json(produp)
+        const produto = await Produto.findByPk(id)
+        return res.json(produto)
     }
 
 }
