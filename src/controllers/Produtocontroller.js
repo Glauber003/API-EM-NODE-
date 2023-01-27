@@ -58,5 +58,18 @@ class Produtocontroller{
         return res.json(produto)
     }
 
+    async deleteProduto(req,res){
+        const{id}=req.params
+
+        await Produto.destroy({
+            where: {
+              id: id
+            }
+          });
+          return res.json({
+            mensagem:'apagado com sucesso'
+          })
+    }
+
 }
 export default new Produtocontroller()
