@@ -4,6 +4,8 @@ const routes = new Router()
 
 routes.use(json())
 
+routes.post('/user/create', Usercontroller.addUser)
+
 routes.get('/produtos', Produtocontroller.getProdutos)
 routes.get('/produto/:id', Produtocontroller.getProduto)
 routes.post('/produto/add', Produtocontroller.addProduto)
