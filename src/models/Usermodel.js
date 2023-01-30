@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize"
-import bcrypt from "bcrypt.js"
+import bcrypt from "bcryptjs"
 
 import database from '../database/db.js'
 

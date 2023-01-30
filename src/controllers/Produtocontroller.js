@@ -3,6 +3,7 @@ import { json } from 'sequelize'
 import database from '../database/db.js'
 import Produto from '../models/ProdutosModels.js'
 
+
 class Produtocontroller{
 
     constructor(){

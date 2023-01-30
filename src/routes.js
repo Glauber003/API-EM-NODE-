@@ -1,5 +1,6 @@
 import{ Router,json } from 'express';
 import Produtocontroller from './controllers/Produtocontroller.js';
+import Usercontroller from './controllers/Usercontroller.js';
 const routes = new Router()
 
 routes.use(json())
