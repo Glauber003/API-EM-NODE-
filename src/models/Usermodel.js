@@ -28,7 +28,7 @@ const User = database.define('Users',{
 
 User.beforeCreate(async (user) => {
     if(user.senha){
-        user.senha_hash = await bcrypt.hash(toString (user.senha,8) )
+        user.senha_hash = await bcrypt.hash(toString(user.senha) ,8 )
     }
   });
 
