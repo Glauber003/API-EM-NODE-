@@ -1,11 +1,13 @@
 import{ Router,json } from 'express';
 import Produtocontroller from './controllers/Produtocontroller.js';
 import Usercontroller from './controllers/Usercontroller.js';
+import Sessioncotroller from './controllers/Sessioncotroller.js';
 const routes = new Router()
 
 routes.use(json())
 
 routes.post('/user/create', Usercontroller.addUser)
+routes.post('/user/login', Sessioncotroller.createsession)
 
 routes.get('/produtos', Produtocontroller.getProdutos)
 routes.get('/produto/:id', Produtocontroller.getProduto)
