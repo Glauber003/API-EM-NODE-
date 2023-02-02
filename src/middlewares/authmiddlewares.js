@@ -1,19 +1,21 @@
 import  jwt from "jsonwebtoken";
 
-import auth from "../config/auth";
+import auth from "../config/auth.js";
 
 export default async(req,res,next)=>{
-    const authHeader = req.Headers.authorizantion
+    const authHeader = req.headers.authorization
 
     if (!authHeader) {
-        res.json("usuario não audtenticado")
+       return res.json("usuario não audtenticado")
     }
 
-    const[,token] = authHeader.splint(' ')
+    const[, token] = authHeader.split(' ')
 
     try {
-     const decoded = jwt.verify(token,auth)
+     const decoded = jwt.verify(token,auth.secret)
+     req.userid= decoded.id
+     return next()
     } catch (error) {
-        
+       res.json('erro na autenticação') 
     }
 }
