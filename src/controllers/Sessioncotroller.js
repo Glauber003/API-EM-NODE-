@@ -27,7 +27,7 @@ class Sessioncotroller{
                 id,
                 nome
             },
-            token:jwt.sign({id},auth.scret)
+            token:jwt.sign({id},auth.secret)
         })
     }
 }
